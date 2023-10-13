@@ -163,7 +163,7 @@ object Repository {
             id = 40,
             category = "Pizza",
             dishTitle = "Margherita Pizza",
-            imageResId = R.drawable.pizza_margerita,
+            imageResId = R.drawable.new_margherita_pizza_40,
             description = "Margherita Pizza is a classic Italian pizza known for its simplicity and delicious flavors. It features a thin crust topped with fresh ingredients. There are no specific dietary restrictions for Margherita Pizza.  Margherita Pizza consists of a thin pizza crust spread with tomato sauce, fresh mozzarella cheese, fresh basil leaves, a drizzle of olive oil, and a sprinkle of salt. It's a delightful blend of flavors, with the basil providing a fresh aroma. Approximately 250300 calories per slice (depending on the thickness of the crust and the amount of cheese used). Most Margherita Pizza recipes are designed to make one 12 inch pitch typically serves 24 people.",
 
             ingredients = listOf(
@@ -994,7 +994,7 @@ object Repository {
             id = 69,
             category = "Breads",
             dishTitle = "Grissini",
-            imageResId = R.drawable.grissini_69,
+            imageResId = R.drawable.new_grissini_500px,
             description = "Grissini are thin Italian breadsticks, known for their crispness and simplicity. They are suitable for most dietary restrictions. Per serving, they contain approximately 3050 calories. Grissini are versatile and can be served as an appetizer, snack, or alongside dishes. This recipe yields about 20 breadsticks.",
 
 
@@ -1060,7 +1060,7 @@ object Repository {
             id = 41,
             category = "Pizza",
             dishTitle = "Quattro Formaggi (Four Cheese Pizza)",
-            imageResId = R.drawable.quattro_formaggi_four_cheese_pizza_41,
+            imageResId = R.drawable.new_quattro_formaggi_pizza_41,
             description = "Quattro Formaggi, or Four Cheese Pizza, is a delightful Italian pizza topped with a combination of four cheeses. This dish has no specific dietary restrictions unless you have cheese allergies or lactose intolerance. Quattro Formaggi features a thin pizza crust generously topped with a blend of four kinds of cheese: mozzarella, gorgonzola, parmesan, and provolone. The result is a rich, cheesy, and flavorful pizza. A typical slice of Quattro Formaggi pizza contains around 250350 calories, depending on the size and thickness of the crust. Most recipes make one 12 inch pizza, which serves 24 people.",
 
 
@@ -1090,7 +1090,7 @@ object Repository {
             id = 42,
             category = "Pizza",
             dishTitle = "Pizza Napoletana",
-            imageResId = R.drawable.pizza_napoletana_42,
+            imageResId = R.drawable.new_pizza_napoletana_42,
             description = "Pizza Napoletana, or Neapolitan Pizza, is a classic Italian pizza known for its thin, soft, and slightly chewy crust. It's typically topped with simple ingredients such as San Marzano tomatoes, mozzarella cheese, basil, olive oil, and salt. This dish has no specific dietary restrictions unless you have allergies to these ingredients.   Neapolitan Pizza has a thin crust, a soft, airy interior, and a slightly crisp exterior. It's known for its simplicity, with a focus on high quality ingredients.  A typical Neapolitan pizza has around 200300 calories per slice, which can vary based on toppings and the pizza size.  Most recipes make one 12 inch pizza, which serves 24 people.",
 
 
@@ -1123,7 +1123,7 @@ object Repository {
             id = 43,
             category = "Pizza",
             dishTitle = "Calzone",
-            imageResId = R.drawable.calzone_pizza_43,
+            imageResId = R.drawable.new_calzone_43,
             description = "Calzone is a delicious Italian dish with a folded pizza dough filled with various ingredients, similar to a turnover. There are no specific dietary restrictions for calzones, but ingredients can vary. On average, a calzone contains around 500700 calories per serving. Calzones are dough pockets filled with cheese, tomato sauce, vegetables, and meats. They are typically folded in a half moon shape and baked until golden brown. Most recipes make 24 calzones, depending on your preferred sizer.",
 
 
@@ -1158,7 +1158,7 @@ object Repository {
             id = 44,
             category = "Pizza",
             dishTitle = "Pizza Bianca",
-            imageResId = R.drawable.pizza_bianca_44,
+            imageResId = R.drawable.new_pizza_bianca_44,
             description = "Pizza Bianca, or White Pizza, is an Italian pizza known for its simplicity. It typically doesn't have tomato sauce and features a combination of creamy cheeses, garlic, and herbs. There are no specific dietary restrictions. On average, a slice of White Pizza contains about 250300 calories. Pizza Bianca is a pizza without tomato sauce, featuring ingredients like mozzarella, ricotta, Parmesan, garlic, olive oil, and fresh herbs. It's known for its rich and creamy flavor. Most recipes make 1 large pizza or 2 smaller ones, serving 24 people.",
 
 
@@ -1193,7 +1193,7 @@ object Repository {
             id = 45,
             category = "Pizza",
             dishTitle = "Sicilian Pizza",
-            imageResId = R.drawable.sicilian_pizza_45,
+            imageResId = R.drawable.ol_sicilian_pizza_45,
             description = "Sicilian Pizza is a thick, rectangular pizza with a crispy crust characterized by its fluffy interior. There are no specific dietary restrictions unless you have particular ingredient preferences. It typically includes cheese, tomato sauce, and various toppings. One serving of Sicilian Pizza contains approximately 285300 calories. Sicilian Pizza is known for its thick, airy crust that's crispy on the outside and soft inside. It's usually topped with tomato sauce, mozzarella cheese, and toppings like pepperoni or vegetables. Most recipes yield a 12x18 inch pizza, serving 68 people.",
 
 
@@ -1227,7 +1227,7 @@ object Repository {
             id = 46,
             category = "Pizza",
             dishTitle = "Focaccia",
-            imageResId = R.drawable.focaccia_pizza_46,
+            imageResId = R.drawable.new_focaccia_46,
             description = "Focaccia is a versatile Italian flatbread, often seasoned with herbs and olive oil. There are no specific dietary restrictions. It's a soft, chewy bread, perfect for dipping in olive oil or serving as a side. One serving typically contains around 100120 calories. Focaccia is a flavorful, olive oil rich bread topped with herbs, sometimes vegetables, or even cheese. It's a simple yet delicious bread that can be enjoyed in various ways. Most recipes yield a standard rectangular focaccia that can be sliced into 812 servings",
 
 
@@ -1264,7 +1264,7 @@ object Repository {
             id = 47,
             category = "Pizza",
             dishTitle = "Pizza Marinara",
-            imageResId = R.drawable.pizza_marinara_47,
+            imageResId = R.drawable.new_pizza_marinara_47,
             description = "Pizza Marinara is a classic Italian pizza known for its simplicity and rich flavors. It's suitable for vegetarians and typically has no dietary restrictions. This pizza features a thin crust with tomato sauce, garlic, oregano, and olive oil. One serving contains approximately 150200 calories. Pizza Marinara is an Italian pizza renowned for its minimalist approach. It consists of a thin crust adorned with a vibrant tomato sauce, aromatic garlic, fragrant oregano, and a drizzle of olive oil. Most recipes yield a single pizza that can be sliced into 24 servings.",
 
 
@@ -1298,7 +1298,7 @@ object Repository {
             id = 91,
             category = "Pizza",
             dishTitle = "Pizza Bianca With Lemon",
-            imageResId = R.drawable.pizza_bianca_with_lemon_91,
+            imageResId = R.drawable.new_pizza_bianca_with_lemon_91,
             description = "Pizza Bianca with Lemon is a delightful variation of traditional pizza that offers a fresh and tangy twist. This pizza is characterized by a white base, typically made with creamy ricotta cheese or mozzarella, and is adorned with the zesty brightness of lemon. The lemon zest and juice infuse the pizza with a citrusy flavor that beautifully complements the richness of the cheese. Toppings may include ingredients like pistachio-lemon pesto, herbs, and sometimes even arugula for a peppery bite. The result is a harmonious blend of creamy, cheesy, and citrusy notes that create a unique and appetizing pizza experience, perfect for those looking to explore new and exciting flavors in the world of pizza.",
 
 
@@ -1331,7 +1331,7 @@ object Repository {
             id = 92,
             category = "Pizza",
             dishTitle = "Pizza With Mascarpone And Ham",
-            imageResId = R.drawable.pizza_with_mascarpone_and_ham_92,
+            imageResId = R.drawable.new_pizza_with_mascarpone_and_ham_92,
             description = "Pizza with Mascarpone and Ham is a gourmet delight that combines the creamy richness of mascarpone cheese with the savory goodness of ham. This pizza typically features a thin, crispy crust as the base, which is spread with a layer of luscious mascarpone cheese. Slices of high-quality ham, often Italian or similar, are generously scattered on top. Complementing ingredients may include earthy mushrooms for added depth of flavor. When baked to perfection, the pizza emerges with a delightful blend of creamy, salty, and umami flavors. It's a sophisticated twist on the classic pizza, offering a harmonious balance of textures and tastes that make it a favorite among those who appreciate gourmet Italian cuisine.",
 
 
@@ -1371,7 +1371,7 @@ object Repository {
             id = 48,
             category = "Pizza",
             dishTitle = "Pizza Capricciosa",
-            imageResId = R.drawable.pizza_capricciosa_48,
+            imageResId = R.drawable.new_pizza_capricciosa_48,
             description = "Pizza Capricciosa is a delightful Italian pizza. It typically contains ham, mushrooms, artichokes, tomato sauce, mozzarella cheese, olives, olive oil, and basil. There are no specific dietary restrictions for this dish. One serving is approximately 250300 calories. Pizza Capricciosa is a classic Italian pizza known for its balanced and flavorful toppings. It combines the richness of ham and cheese with the earthiness of mushrooms and artichokes, complemented by the freshness of olives and basil. Most recipes yield one pizza designed for 24 servings.",
 
 
@@ -1409,7 +1409,7 @@ object Repository {
             id = 49,
             category = "Pizza",
             dishTitle = "Pizza Diavola",
-            imageResId = R.drawable.pizza_diavola_49,
+            imageResId = R.drawable.new_pizza_diavola_49,
             description = "Pizza Diavola is an Italian pizza known for its spicy flavors. It typically includes tomato sauce, mozzarella cheese, spicy salami, and sometimes chili flakes. There are no specific dietary restrictions. Each serving contains approximately 250300 calories. Pizza Diavola, meaning \"Devil's Pizza,\" packs a punch with spicy salami and chili flakes. It's a flavorful and fiery pizza that balances heat with the richness of cheese and tomato sauce. Most recipes are designed to serve 24 people.",
 
 
@@ -1445,7 +1445,7 @@ object Repository {
             id = 76,
             category = "Pizza",
             dishTitle = "Pizza Pepperoni",
-            imageResId = R.drawable.pizza_pepperoni_76,
+            imageResId = R.drawable.new_pizza_pepperoni_76,
             description = "Pizza Pepperoni is a beloved classic with a crispy crust, zesty tomato sauce, gooey mozzarella cheese, and spicy pepperoni.",
 
 
@@ -1545,7 +1545,7 @@ object Repository {
             id = 79,
             category = "Pizza",
             dishTitle = "Pizza Romana",
-            imageResId = R.drawable.pizza_romana_79,
+            imageResId = R.drawable.new_pizza_romana_79,
             description = "Pizza Romana, also known as Roman Pan Pizza, is a delicious Italian dish characterized by its rectangular shape and crispy, airy crust.  ",
 
 
