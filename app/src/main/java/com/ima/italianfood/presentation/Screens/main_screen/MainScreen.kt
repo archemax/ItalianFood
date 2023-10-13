@@ -5,9 +5,10 @@ import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -43,6 +44,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -110,6 +112,7 @@ fun MainScreen(
                 active = false,
                 onActiveChange = { },
                 placeholder = { Text(text = "Search...") },
+                modifier =Modifier.fillMaxWidth().padding(top=24.dp),
                 colors = SearchBarDefaults.colors(containerColor = Color(0xFFECEFFB)),
                 leadingIcon = {
                     Icon(
@@ -124,13 +127,12 @@ fun MainScreen(
                             modifier = Modifier
                                 .clickable {
                                     queryState.value = ""
-                                }.padding(12.dp)
+                                }
+                                .padding(12.dp)
                         )
                     }
                 },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 24.dp, start = 0.dp, end = 0.dp)
+
                 //.border(1.dp, color = Color.LightGray),
 
             ) {}
@@ -272,76 +274,78 @@ fun OneRecipeItem(
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFECEFFB)),
     ) {
-
-        Row(modifier = Modifier.fillMaxHeight()) {
-            Image(
-
-                modifier = Modifier
-                    .size(158.dp)
-                    .clip(RoundedCornerShape(8.dp)),
-                contentScale = ContentScale.FillHeight,
-                painter = painterResource(id = oneRecipe.imageResId),
-                contentDescription = null,
-            )
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(start = 16.dp, end = 16.dp, top = 11.dp)
-                    .height(100.dp)
-            ) {
-                Text(
-                    text = "${oneRecipe.dishTitle}",
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    style = TextStyle(
-                        fontSize = 14.sp,
-                        lineHeight = 16.sp,
-                        fontFamily = FontFamily(Font(R.font.montserrat_semi_bold)),
-                        fontWeight = FontWeight(600),
-                        color = Color(0xFF3F486C),
-                        letterSpacing = 0.4.sp,
+        BoxWithConstraints {
+            if (maxWidth < 450.dp) {
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    Image(
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .fillMaxWidth(0.4F)
+                            .clip(RoundedCornerShape(8.dp)),
+                        contentScale = ContentScale.FillHeight,
+                        painter = painterResource(id = oneRecipe.imageResId),
+                        contentDescription = null,
                     )
+                    Column(
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .padding(start = 16.dp, end = 16.dp, top = 11.dp)
+                        //.height(100.dp)
+                    ) {
+                        Text(
+                            text = "${oneRecipe.dishTitle}",
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            style = TextStyle(
+                                fontSize = 14.sp,
+                                lineHeight = 16.sp,
+                                fontFamily = FontFamily(Font(R.font.montserrat_semi_bold)),
+                                fontWeight = FontWeight(600),
+                                color = Color(0xFF3F486C),
+                                letterSpacing = 0.4.sp,
+                            )
 
-                )
-                Spacer(modifier = Modifier.size(8.dp))
-                ////////////////////////description in card//////////////////////////////////////////////
-                Text(
-                    text = "${oneRecipe.description}",
-                    maxLines = 5,
-                    overflow = TextOverflow.Ellipsis,
-                    style = TextStyle(
-                        fontSize = 10.sp,
-                        lineHeight = 16.sp,
-                        fontFamily = FontFamily(Font(R.font.montserrat_medium)),
-                        fontWeight = FontWeight(400),
-                        color = Color(0xFF6B6A6A),
-                        letterSpacing = 0.4.sp,
-                    )
+                        )
+                        Spacer(modifier = Modifier.size(8.dp))
+                        ////////////////////////description in card//////////////////////////////////////////////
+                        Text(
+                            text = "${oneRecipe.description}",
+                            maxLines = 5,
+                            overflow = TextOverflow.Ellipsis,
+                            style = TextStyle(
+                                fontSize = 10.sp,
+                                lineHeight = 16.sp,
+                                fontFamily = FontFamily(Font(R.font.montserrat_medium)),
+                                fontWeight = FontWeight(400),
+                                color = Color(0xFF6B6A6A),
+                                letterSpacing = 0.4.sp,
+                            ),
+                            modifier = Modifier.fillMaxWidth()
 
-                )
-                Spacer(modifier = Modifier.size(8.dp))
+                        )
+                        Spacer(modifier = Modifier.size(8.dp))
 //INGREDIENTS//////////////////////////                //
 
-                // Iterate through ingredients and display each item
-                val listOfIngredients = oneRecipe.ingredients
-                Log.d("listOfIngredients", "${listOfIngredients}")
+                        // Iterate through ingredients and display each item
+                        val listOfIngredients = oneRecipe.ingredients
+                        Log.d("listOfIngredients", "${listOfIngredients}")
 
 
-                val toMutList = listOfIngredients.toMutableList()
-                Log.d("toMutList", "${toMutList}")
+                        val toMutList = listOfIngredients.toMutableList()
+                        Log.d("toMutList", "${toMutList}")
 
-                val noFirstElRemoved = toMutList.drop(1)
-                Log.d("noFirstElRemoved", "${noFirstElRemoved}")
+                        val noFirstElRemoved = toMutList.drop(1)
+                        Log.d("noFirstElRemoved", "${noFirstElRemoved}")
 
 
-                val joinedToString = noFirstElRemoved.joinToString("")
-                Log.d("joinedToString", "${joinedToString}")
+                        val joinedToString = noFirstElRemoved.joinToString("")
+                        Log.d("joinedToString", "${joinedToString}")
 
-                val stringNon = joinedToString.replace("\n", " ")
-                Log.d("StringNon", "${stringNon}")
+                        val stringNon = joinedToString.replace("\n", " ")
+                        Log.d("StringNon", "${stringNon}")
 
-                val trimmed = stringNon.trim()
-                Log.d("trimmed", "${trimmed}")
+                        val trimmed = stringNon.trim()
+                        Log.d("trimmed", "${trimmed}")
 
 
 //                Text(
@@ -371,33 +375,167 @@ fun OneRecipeItem(
 //                Log.d("instructions", finalInstructions)
 
 
-                //Divider()
-                Spacer(modifier = Modifier.weight(0.5f))
-                Row(
-                    modifier = Modifier.padding(bottom = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.category_icon),
-                        contentDescription = null,
-                        tint = Color(0xFF3F486C)
-                    )
-                    Text(
-                        text = "  ${oneRecipe.category}",
-                        maxLines = 1,
-                        style = TextStyle(
-                            fontSize = 8.sp,
-                            lineHeight = 16.sp,
-                            fontFamily = FontFamily(Font(R.font.montserrat_medium)),
-                            fontWeight = FontWeight(400),
-                            color = Color(0xFF3F486C),
-                            letterSpacing = 0.4.sp,
-                        )
-                    )
+                        //Divider()
+                        Spacer(modifier = Modifier.weight(0.5f))
+                        Row(
+                            modifier = Modifier.padding(bottom = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.category_icon),
+                                contentDescription = "",
+                                tint = Color(0xFF3F486C)
+                            )
+                            Text(
+                                text = "  ${oneRecipe.category}",
+                                maxLines = 1,
+                                style = TextStyle(
+                                    fontSize = 8.sp,
+                                    lineHeight = 16.sp,
+                                    fontFamily = FontFamily(Font(R.font.montserrat_medium)),
+                                    fontWeight = FontWeight(400),
+                                    color = Color(0xFF3F486C),
+                                    letterSpacing = 0.4.sp,
+                                )
+                            )
+                        }
+
+                    }
                 }
+            }else{
+/////////show this when the screen is wider than 400.dp ///////////////////////
+
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    Image(
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .fillMaxWidth(0.4F)
+                            .clip(RoundedCornerShape(8.dp)),
+                        contentScale = ContentScale.FillHeight,
+                        painter = painterResource(id = oneRecipe.imageResId),
+                        contentDescription = null,
+                    )
+                    Column(
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .padding(start = 16.dp, end = 16.dp, top = 16.dp),
+                        verticalArrangement = Arrangement.SpaceBetween
+                        //.height(100.dp)
+                    ) {
+                        Text(
+                            text = "${oneRecipe.dishTitle}",
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            style = TextStyle(
+                                fontSize = 20.sp,
+                                lineHeight = 22.sp,
+                                fontFamily = FontFamily(Font(R.font.montserrat_semi_bold)),
+                                fontWeight = FontWeight(600),
+                                color = Color(0xFF3F486C),
+                                letterSpacing = 0.4.sp,
+                            )
+
+                        )
+                        Spacer(modifier = Modifier.size(12.dp))
+                        ////////////////////////description in card//////////////////////////////////////////////
+                        Text(
+                            text = "${oneRecipe.description}",
+                            maxLines = 5,
+                            overflow = TextOverflow.Ellipsis,
+                            style = TextStyle(
+                                fontSize = 16.sp,
+                                lineHeight = 22.sp,
+                                fontFamily = FontFamily(Font(R.font.montserrat_medium)),
+                                fontWeight = FontWeight(400),
+                                color = Color(0xFF6B6A6A),
+                                letterSpacing = 0.4.sp,
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+
+                        )
+                        Spacer(modifier = Modifier.size(12.dp))
+//INGREDIENTS//////////////////////////                //
+
+                        // Iterate through ingredients and display each item
+                        val listOfIngredients = oneRecipe.ingredients
+                        Log.d("listOfIngredients", "${listOfIngredients}")
+                        val toMutList = listOfIngredients.toMutableList()
+                        Log.d("toMutList", "${toMutList}")
+
+                        val noFirstElRemoved = toMutList.drop(1)
+                        Log.d("noFirstElRemoved", "${noFirstElRemoved}")
+
+
+                        val joinedToString = noFirstElRemoved.joinToString("")
+                        Log.d("joinedToString", "${joinedToString}")
+
+                        val stringNon = joinedToString.replace("\n", " ")
+                        Log.d("StringNon", "${stringNon}")
+
+                        val trimmed = stringNon.trim()
+                        Log.d("trimmed", "${trimmed}")
+
+
+                Text(
+                    text = stringNon,
+                    maxLines = 5,
+                    overflow = TextOverflow.Ellipsis,
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        lineHeight = 22.sp,
+                        fontFamily = FontFamily(Font(R.font.montserrat_medium)),
+                        fontWeight = FontWeight(400),
+                        color = Color(0xFF6B6A6A),
+                        letterSpacing = 0.4.sp,
+                    )
+                )
+
+
+//////////////////////////////////////
+//                val listOfInstructions = oneRecipe.instructions
+//                val oneStringInstructions = listOfInstructions.joinToString()
+//                val finalInstructions = oneStringInstructions.replace("\n", " /")
+//                Text(
+//                    text = "$finalInstructions",
+//                    maxLines = 1,
+//                    fontSize = 8.sp,
+//                )
+//                Log.d("instructions", finalInstructions)
+
+
+                        //Divider()
+                        Spacer(modifier = Modifier.weight(0.5f))
+                        Row(
+                            modifier = Modifier.padding(bottom = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.category_icon),
+                                contentDescription = "",
+                                tint = Color(0xFF3F486C)
+                            )
+                            Text(
+                                text = "  ${oneRecipe.category}",
+                                maxLines = 1,
+                                style = TextStyle(
+                                    fontSize = 14.sp,
+                                    lineHeight = 22.sp,
+                                    fontFamily = FontFamily(Font(R.font.montserrat_medium)),
+                                    fontWeight = FontWeight(400),
+                                    color = Color(0xFF3F486C),
+                                    letterSpacing = 0.4.sp,
+                                )
+                            )
+                        }
+
+                    }
+                }
+
 
             }
         }
+
+
     }
 }
 

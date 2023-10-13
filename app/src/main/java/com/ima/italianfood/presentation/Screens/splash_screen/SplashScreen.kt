@@ -24,7 +24,7 @@ fun SplashScreen(
     onNavigationNext: () -> Unit
 ) {
     LaunchedEffect(true) {
-        delay(2000) // Delay for 1 second (1000 milliseconds)
+        delay(0) // Delay for 1 second (1000 milliseconds)
         onNavigationNext.invoke()
     }
     Column(
