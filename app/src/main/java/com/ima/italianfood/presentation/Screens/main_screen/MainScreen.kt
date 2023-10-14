@@ -71,6 +71,8 @@ fun MainScreen(
 ) {
     val state = viewModel.state
 
+    val number = 1
+
     val queryState = rememberSaveable { mutableStateOf("") }
     Log.d("queryState", "${queryState.value}")
 
@@ -112,7 +114,9 @@ fun MainScreen(
                 active = false,
                 onActiveChange = { },
                 placeholder = { Text(text = "Search...") },
-                modifier =Modifier.fillMaxWidth().padding(top=24.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 24.dp),
                 colors = SearchBarDefaults.colors(containerColor = Color(0xFFECEFFB)),
                 leadingIcon = {
                     Icon(
@@ -402,7 +406,7 @@ fun OneRecipeItem(
 
                     }
                 }
-            }else{
+            } else {
 /////////show this when the screen is wider than 400.dp ///////////////////////
 
                 Row(modifier = Modifier.fillMaxWidth()) {
@@ -476,19 +480,19 @@ fun OneRecipeItem(
                         Log.d("trimmed", "${trimmed}")
 
 
-                Text(
-                    text = stringNon,
-                    maxLines = 5,
-                    overflow = TextOverflow.Ellipsis,
-                    style = TextStyle(
-                        fontSize = 16.sp,
-                        lineHeight = 22.sp,
-                        fontFamily = FontFamily(Font(R.font.montserrat_medium)),
-                        fontWeight = FontWeight(400),
-                        color = Color(0xFF6B6A6A),
-                        letterSpacing = 0.4.sp,
-                    )
-                )
+                        Text(
+                            text = stringNon,
+                            maxLines = 5,
+                            overflow = TextOverflow.Ellipsis,
+                            style = TextStyle(
+                                fontSize = 16.sp,
+                                lineHeight = 22.sp,
+                                fontFamily = FontFamily(Font(R.font.montserrat_medium)),
+                                fontWeight = FontWeight(400),
+                                color = Color(0xFF6B6A6A),
+                                letterSpacing = 0.4.sp,
+                            )
+                        )
 
 
 //////////////////////////////////////
